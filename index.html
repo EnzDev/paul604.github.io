@@ -3,6 +3,15 @@
     <meta charset="utf-8">
     <title>Paul</title>
     <style>
+    *{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
         body{background: #00161d;}
         div.text{
             font-size: 2rem;
@@ -13,7 +22,7 @@
             font-family: "Source Code Pro",serif;
 
             color: #c9c9ff;
-            
+
             transform: translate(-50%, -50%);
             text-align: center;
             font-weight: bolder;
@@ -68,16 +77,44 @@
             100% {
                 background-position: 500px 1000px, 200px 400px, -100px 300px;
             }
-        }
+          }
 
+
+
+        .mute{
+          position: fixed;
+          height: 32px;
+          width: 32px;
+          background: transparent url("files/mute.png") repeat scroll;
+          background-size: 100%;
+          z-index: 3;
+          }
+          #on{
+            background-position: 0% 0%;
+          }
+          #off{
+            background-position: 0% 100%;
+          }
     </style>
+    <script type="text/javascript">
+      function set() {
+        var is = document.getElementsByClassName('mute')[0].id;
+        if (is === "on") {
+          document.getElementsByClassName('mute')[0].id = "off";
+          document.getElementsByTagName("audio")[0].pause();
+        } else {
+          document.getElementsByClassName('mute')[0].id = "on";
+          document.getElementsByTagName("audio")[0].play();
+        }
+      }
+    </script>
 </head>
 <body>
-    <iframe width="0" height="0" 
-        src="https://www.youtube.com/embed/SXQe68dOc-Q?autoplay=1&loop=1">
-    </iframe>
+<audio src="http://picosong.com/cdn/1d77d00a85d93067f03d6b1dc9425dcc.mp3" autoplay loop>
+  <source src="http://picosong.com/cdn/1d77d00a85d93067f03d6b1dc9425dcc.mp3" type="audio/mp3">
+</audio>
+<div class="mute" id="on" onclick="set()"></div>
 <div id="snow"><div class="text">Website is Coming <br><a href="https://github.com/paul604">my github</a></div></div>
 
 </body>
 </html>
-
