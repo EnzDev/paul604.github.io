@@ -3,6 +3,19 @@
     <meta charset="utf-8">
     <title>Paul</title>
     <link rel="stylesheet" href="css/css.css">
+              
+    <script type="text/javascript">
+      function set() {
+        var is = document.getElementsByClassName('mute')[0].id;
+        if (is === "on") {
+          document.getElementsByClassName('mute')[0].id = "off";
+          document.getElementsByTagName("audio")[0].pause();
+        } else {
+          document.getElementsByClassName('mute')[0].id = "on";
+          document.getElementsByTagName("audio")[0].play();
+        }
+      }
+    </script>
 </head>
 <body>
 <audio autoplay loop>
