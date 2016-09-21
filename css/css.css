@@ -72,7 +72,7 @@
           position: fixed;
           height: 32px;
           width: 32px;
-          background: transparent url("files/mute.png") repeat scroll;
+          background: transparent url("/files/mute.png") repeat scroll;
           background-size: 100%;
           z-index: 3;
           }
